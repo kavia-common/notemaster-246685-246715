@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import AppContextProvider from "./_app-context";
 
 export const metadata: Metadata = {
-  title: "Minimal Next.js App",
-  description: "Ultra-minimal Next.js application",
+  title: "Notemaster",
+  description: "Retro-themed notes application",
 };
 
 export default function RootLayout({
@@ -13,8 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>
-        {children}
+      <body className="bg-background text-primary" suppressHydrationWarning>
+        <AppContextProvider>{children}</AppContextProvider>
       </body>
     </html>
   );
